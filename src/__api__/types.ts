@@ -568,6 +568,18 @@ export type AllCategoriesOutput = {
   ok?: Maybe<Scalars['Boolean']>;
 };
 
+export type MeQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MeQuery = { __typename?: 'Query', me: { __typename?: 'User', id: number, email: string, role: UserRole, verified: boolean } };
+
+export type RestaurantsPageQueryVariables = Exact<{
+  input: RestaurantsInput;
+}>;
+
+
+export type RestaurantsPageQuery = { __typename?: 'Query', allCategories: { __typename?: 'allCategoriesOutput', ok?: boolean | null, error?: string | null, categories?: Array<{ __typename?: 'Category', id: number, name: string, coverImage?: string | null, slug: string, restaurantCount: number }> | null }, restaurants: { __typename?: 'RestaurantsOutput', ok?: boolean | null, error?: string | null, totalPage?: number | null, totalResult?: number | null, result?: Array<{ __typename?: 'Restaurant', id: number, name: string, coverImage?: string | null, address: string, isPromoted: boolean, category?: { __typename?: 'Category', name: string } | null }> | null } };
+
 export type CreateAccountMutationVariables = Exact<{
   createAccountInput: CreateAccountInput;
 }>;
@@ -581,3 +593,19 @@ export type LoginMutationVariables = Exact<{
 
 
 export type LoginMutation = { __typename?: 'Mutation', login: { __typename?: 'LonginOutPut', ok?: boolean | null, token?: string | null, error?: string | null } };
+
+export type VerifyEmailMutationVariables = Exact<{
+  input: VerifyEmailInput;
+}>;
+
+
+export type VerifyEmailMutation = { __typename?: 'Mutation', verifyEmail: { __typename?: 'VerifyEmailOutput', ok?: boolean | null, error?: string | null } };
+
+export type EditProfileMutationVariables = Exact<{
+  input: EditProfileInput;
+}>;
+
+
+export type EditProfileMutation = { __typename?: 'Mutation', editProfile: { __typename?: 'EditProfileOutput', ok?: boolean | null, error?: string | null } };
+
+export type EditUserFragment = { __typename?: 'User', verified: boolean, email: string };

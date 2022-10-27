@@ -4,7 +4,7 @@ import { FormError } from "../component/form-error";
 import uber from "../images/uber.svg";
 import { Button } from "../component/button";
 import { Link, useNavigate } from "react-router-dom";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import React from "react";
 import {
   CreateAccountMutation,
@@ -45,8 +45,8 @@ export const CreateAccount = () => {
       createAccount: { ok },
     } = data;
     if (ok) {
-      //redirect
-      navigate("/login");
+      alert("회원가입이 왼료 되었습니다. 로그인페이지로 이동합니다.");
+      navigate("/");
     }
   };
 
@@ -132,8 +132,8 @@ export const CreateAccount = () => {
           )}
         </form>
         <div>
-          이미 아아디를 가지고 계십니까?{" "}
-          <Link to="/Login" className="text-lime-600 hover:underline">
+          이미 아이디를 가지고 계십니까?{" "}
+          <Link to="/" className="text-lime-600 hover:underline">
             로그인 하기
           </Link>
         </div>

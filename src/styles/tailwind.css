@@ -2,9 +2,7 @@
 @tailwind components;
 
 .input {
-  @apply focus:outline-none focus:border-gray-500 p-3 text-lg font-light  border-2 border-gray-200 transition-colors;
+  @apply focus:outline-none focus:border-gray-500 p-3 text-lg font-light mb-2  border-2 border-gray-200 transition-colors;
 }
-
-
 
 @tailwind utilities;
