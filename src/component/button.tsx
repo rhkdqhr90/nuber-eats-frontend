@@ -17,6 +17,6 @@ export const Button: React.FC<IButtonProps> = ({
         : "bg-gray-300 pointer-events-none"
     } "bg-gray-400" : ""}`}
   >
-    {loading ? "Loading...." : actionText}
+    {loading ? "Loading..." : actionText}
   </button>
 );

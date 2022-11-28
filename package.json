@@ -33,7 +33,8 @@
     "start": "npm run generate & npm run tailwind:build & react-scripts start",
     "generate": "graphql-codegen",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose",
+    "test:coverage": "npm test -- --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -61,5 +62,12 @@
     "@graphql-codegen/typescript-operations": "^2.5.4",
     "@types/react-helmet": "^6.1.5",
     "typescript": "^4.8.4"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/component/**/*.tsx",
+      "./src/pages/**/*.tsx",
+      "./src/routers/**/*.tsx"
+    ]
   }
 }

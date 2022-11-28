@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Restaurants } from "../pages/client/restaurant";
 import { Header } from "../component/header";
 import { useMe } from "../hooks/userMe";
-import { NotFount } from "../pages/404";
+import { NotFound } from "../pages/404";
 import { ConfirmEmail } from "../pages/user/confirm-email";
 import { EditProfile } from "../pages/user/edit-profile";
 import { Search } from "../pages/client/search";
@@ -33,7 +33,7 @@ export const LoggedInRouter = () => {
       <Header />
       <Routes>
         {data.me.role === "Client" && ClienteRoutes}
-        <Route path="*" element={<NotFount />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
   );
